@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/csv"
+	"fmt"
 	"log"
 	"os"
 
@@ -53,6 +54,7 @@ func main() {
 		}
 		writer.Write(headers)
 
+		fmt.Printf("Scraped %d products!\n", len(products))
 		for _, product := range products {
 			record := []string{
 				"https:" + product.Url,
